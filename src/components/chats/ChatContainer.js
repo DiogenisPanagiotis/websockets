@@ -19,16 +19,14 @@ export default class ChatContainer extends Component {
 	makeCommunityChat = chat => {
 		const { socket } = this.props
 		this.setState({communityChat: chat})
-		socket.on(MESSAGE_RECIEVED, this.addMessageToChat())		
+		socket.on(MESSAGE_RECIEVED, this.addMessageToChat)		
 	}
 
-	addMessageToChat = () => {
-		return message => {
-			const { communityChat } = this.state
-			let updatedChat = communityChat
-			updatedChat.messages.push(message)
-			this.setState({communityChat: updatedChat})
-		}
+	addMessageToChat = message => {
+		const { communityChat } = this.state
+		let updatedChat = communityChat
+		updatedChat.messages.push(message)
+		this.setState({communityChat: updatedChat})
 	}
 
 	sendMessage = message => {

@@ -34,9 +34,9 @@ module.exports = function(socket) {
 	//verify username
 	socket.on(VERIFY_USER, (nickname, verifyUser) => {
 		if (isUser(connectedUsers, nickname)) {
-			verifyUser({ isUser: true, user: null })
+			verifyUser({isUser: true, user: null })
 		} else {
-			verifyUser({ isUser: false, user: createUser({ name: nickname })})
+			verifyUser({isUser: false, user: createUser({name: nickname})})
 		}
 	})
 
@@ -47,7 +47,7 @@ module.exports = function(socket) {
 
 	//message sent
 	socket.on(MESSAGE_SENT, message => {
-		sendMessageToChat(message, sender)
+		io.emit(MESSAGE_RECIEVED, createMessage({message, sender}))
 	})
 
 }
@@ -56,10 +56,6 @@ function addUser(userList, user) {
 	let newList = Object.assign({}, userList)
 	newList[user.name] = user
 	return newList
-}
-
-function sendMessageToChat(message, sender) {
-	io.emit(MESSAGE_RECIEVED, createMessage({message, sender}))
 }
 
 function removeUser(userList, username) {
