@@ -22,19 +22,19 @@ export default class Layout extends Component {
 
 	initSocket = () => {
 		const socket = io(socketUrl)
-		this.setState({ socket })
+		this.setState({socket})
 	}
 
 	login = user => {
 		const { socket } = this.state
 		socket.emit(USER_CONNECTED, user)
-		this.setState({ user })
+		this.setState({user})
 	}
 
 	logout = user => {
 		const { socket } = this.state
 		socket.emit(USER_DISCONNECTED, user)
-		this.setState({ user: null })		
+		this.setState({user: null})		
 	}
 	
 	render() {

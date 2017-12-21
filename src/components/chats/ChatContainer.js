@@ -48,7 +48,7 @@ export default class ChatContainer extends Component {
 						sendMessage={message => this.sendMessage(message)}
 						/>
 					<br/>
-					<button onClick={() => {logout(user)}} type="button" className="btn btn-primary btn-lg btn-block">Logout</button>
+					<button onClick={() => {logout(user)}} type="button" className="btn btn-danger btn-lg btn-block">Logout</button>
 				</div>
 			)
 		}

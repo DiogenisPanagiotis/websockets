@@ -29,16 +29,16 @@ export default class LoginForm extends Component {
 
 	handleChange = (e) => {
 		if (this.state.error !== '') {
-			this.setState({ error: ''})
+			this.setState({error: ''})
 		}
-		this.setState({ nickname: e.target.value })
+		this.setState({nickname: e.target.value})
 	}
 
 	setError = (error) => this.setState({error})
 
 	renderClassName = () => {
 		const { error } = this.state
-		return `${error ? 'is-invalid' : ''} form-control form-control-no-border`
+		return `${error ? 'is-invalid' : ''} form-control form-control-no-border login-form`
 	}
 
 	render() {	
@@ -48,11 +48,11 @@ export default class LoginForm extends Component {
 				<div className="jumbotron jumbotron-login-grey">
 					<div className="row">
 						<div className="col">
-							<h2 className="loginHeader">Got a nickname?</h2>
+							<h1 className="loginHeader">Got a nickname?</h1>
 							<br/>
 							<form onSubmit={this.handleSubmit} className="login-form">
-								<div className="input-group">
-								  	<span className="input-group-addon" id="basic-addon1">@</span>
+								<div className="input-group input-group-lg">
+								  	<span className="input-group-addon" id="sizing-addon1">@</span>
 								  	<input 
 								  		autoFocus
 								  		type="text" 
