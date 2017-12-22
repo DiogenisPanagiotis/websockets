@@ -1,3 +1,12 @@
+.bug {
+    fill: #FF5A5F;
+    stroke: #FF5A5F;
+}
+
+.fixed-bottom {
+    height: 65px;
+}
+
 .form-control {
     font-size: 0.8rem;
     border: 1px solid #DBDBDB;
@@ -12,7 +21,7 @@
 }
 
 .login-form {
-    box-shadow: 0 5px 30px rgba(156, 160, 171, 0.25) !important;
+    box-shadow: 0 0 30px rgba(156, 160, 171, 0.25) !important;
 }
 
 .form-control-no-border:focus {
@@ -42,7 +51,7 @@
 
 .loginHeader {
     color: #484848;
-    font-size: 48px;
+    /*font-size: 44px;*/
 	/*text-align: center;*/
 }
 

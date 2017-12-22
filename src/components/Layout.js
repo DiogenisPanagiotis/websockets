@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import io from 'socket.io-client'
 import LoginForm from './LoginForm'
 import ChatContainer from './chats/ChatContainer'
+// import Nav from './Nav'
+// import Footer from './Footer'
 import { USER_CONNECTED, USER_DISCONNECTED } from '../Events.js'
 
 const socketUrl = 'http://localhost:8080'
