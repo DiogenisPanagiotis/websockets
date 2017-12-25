@@ -1,7 +1,9 @@
 .navbar-expand-md {
     border-bottom: solid 1px #efefef;
 }
-
+#message {
+    border: solid 1px #efefef;
+}
 .bug {
     fill: #FF5A5F;
     stroke: #FF5A5F;
