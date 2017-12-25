@@ -17,7 +17,6 @@ export default class Messages extends Component {
 	
 	render() {
 		const { messages, user } = this.props
-		console.log('Messages: ', messages)
 		return (
 				<div className="jumbotron jumbotron-chat-white chat-space" ref='container'>
 					{

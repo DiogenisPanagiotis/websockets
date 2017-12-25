@@ -34,9 +34,6 @@ export default class MessageInput extends Component {
 			      	placeholder="Say something..." 
 					onChange = { ({target}) => this.setState({message: target.value}) }
 			      	/>
-			      <span className="input-group-btn">
-			        <button className="btn btn-secondary" type="submit">Send</button>
-			      </span>
 			    </div>
 			    </form>
 			</div>

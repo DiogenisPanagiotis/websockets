@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import io from 'socket.io-client'
 import LoginForm from './LoginForm'
 import ChatContainer from './chats/ChatContainer'
-// import Nav from './Nav'
-// import Footer from './Footer'
+import Nav from './Nav'
 import { USER_CONNECTED, USER_DISCONNECTED } from '../Events.js'
 
 const socketUrl = 'http://localhost:8080'
@@ -38,17 +37,20 @@ export default class Layout extends Component {
 		socket.emit(USER_DISCONNECTED, user)
 		this.setState({user: null})		
 	}
-	
+
 	render() {
 		const { socket, user } = this.state
 		return (
+			<div>
+			<Nav user={user} />
 			<div className='Layout'>
 			{
 				!user ?
-				<LoginForm socket={socket} login={this.login} /> 
+				<LoginForm socket={socket} login={this.login}/> 
 				:
-				<ChatContainer socket={socket} user={user} logout={this.logout} />
+				<ChatContainer socket={socket} user={user} logout={this.logout} users={this.state.users}/>
 			}
+			</div>
 			</div>
 		);
 	}

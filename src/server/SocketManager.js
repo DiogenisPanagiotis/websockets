@@ -49,7 +49,10 @@ module.exports = function(socket) {
 	socket.on(MESSAGE_SENT, message => {
 		io.emit(MESSAGE_RECIEVED, createMessage({message, sender}))
 	})
-
+	//user sent
+	socket.on("SENT", user => {
+		io.emit("RECEIVED", user)
+	})
 }
 
 function addUser(userList, user) {

@@ -45,13 +45,13 @@ export default class LoginForm extends Component {
 		const { nickname, error } = this.state
 		return (
 			<div className="container container-login">
-				<div className="jumbotron jumbotron-login-grey">
+				<div className="jumbotron jumbotron-login">
 					<div className="row">
 						<div className="col">
-							<h1 className="loginHeader">Got a nickname?</h1>
+							<h2 className="loginHeader">Got a nickname?</h2>
 							<br/>
 							<form onSubmit={this.handleSubmit} className="login-form">
-								<div className="input-group input-group-lg">
+								<div className="input-group input-group-md">
 								  	<span className="input-group-addon" id="sizing-addon1">@</span>
 								  	<input 
 								  		autoFocus
@@ -60,7 +60,7 @@ export default class LoginForm extends Component {
 								  		placeholder="Username" 
 										value={nickname}
 										onChange={this.handleChange}
-								  		maxLength="21"
+								  		maxLength="19"
 								  		/>
 								</div>
 							</form>
