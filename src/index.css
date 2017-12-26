@@ -4,10 +4,7 @@
 #message {
     border: solid 1px #efefef;
 }
-.bug {
-    fill: #FF5A5F;
-    stroke: #FF5A5F;
-}
+
 .badge-success {
     color: #28a745;
     padding-bottom: 4px;
@@ -74,7 +71,7 @@
     color: #FF5A5F;
     font-size: 14px;
     margin-top: 7px;
-    margin-left: 68px;
+    margin-left: 53px;
 }
 
 .container {
