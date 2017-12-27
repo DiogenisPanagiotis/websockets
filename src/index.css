@@ -273,6 +273,13 @@
     width: 40px;
     border: solid 3px #fff;
     border-radius: 20px;
+    -webkit-transition: -webkit-transform .9s ease-in-out;
+            transition: transform .9s ease-in-out;
+}
+
+.avatar:hover {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
 }
 
 
