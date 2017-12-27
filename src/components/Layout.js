@@ -49,16 +49,14 @@ export default class Layout extends Component {
 		const { socket, user } = this.state
 		console.log(JSON.stringify(user, null, 2))
 		return (
-			<div>
+			<div className="Layout">
 				<Nav user={user} />
-				<div className='Layout'>
 				{
 					!user ?
 					<LoginForm socket={socket} login={this.login}/> 
 					:
 					<ChatContainer socket={socket} user={user} logout={this.logout} users={this.state.users} setUserNull={this.setUserNull}/>
 				}
-				</div>
 			</div>
 		);
 	}

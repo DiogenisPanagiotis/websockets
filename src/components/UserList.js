@@ -5,6 +5,9 @@ export default class UserList extends Component {
 	renderUserList = () => {
 		const { users } = this.props
 		return (
+			<div>
+			<h4>Connected Users</h4>
+			<br/>
 			<div className="list-group">
 			{
 				users ?
@@ -19,6 +22,7 @@ export default class UserList extends Component {
 				: 
 				null
 			}
+			</div>
 			</div>
 		)
 	}
