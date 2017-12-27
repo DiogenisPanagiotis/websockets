@@ -256,6 +256,17 @@
     cursor: pointer;
 }
 
+.right a {
+    color: #fff;
+}
+
+.false a {
+    color: #212529;
+}
+
+.embed {
+    border: none;
+}
 
 
 
