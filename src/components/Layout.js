@@ -34,23 +34,31 @@ export default class Layout extends Component {
 
 	logout = user => {
 		const { socket } = this.state
-		socket.emit(USER_DISCONNECTED, user)
-		this.setState({user: null})		
+		socket.emit(USER_DISCONNECTED, user)	
+	}
+
+	setUserNull = user => {
+		if (this.state.user) {	
+			if (this.state.user.id === user.id) {
+				this.setState({user: null})
+			}
+		}
 	}
 
 	render() {
 		const { socket, user } = this.state
+		console.log(JSON.stringify(user, null, 2))
 		return (
 			<div>
-			<Nav user={user} />
-			<div className='Layout'>
-			{
-				!user ?
-				<LoginForm socket={socket} login={this.login}/> 
-				:
-				<ChatContainer socket={socket} user={user} logout={this.logout} users={this.state.users}/>
-			}
-			</div>
+				<Nav user={user} />
+				<div className='Layout'>
+				{
+					!user ?
+					<LoginForm socket={socket} login={this.login}/> 
+					:
+					<ChatContainer socket={socket} user={user} logout={this.logout} users={this.state.users} setUserNull={this.setUserNull}/>
+				}
+				</div>
 			</div>
 		);
 	}

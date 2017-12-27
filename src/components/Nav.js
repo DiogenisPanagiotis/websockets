@@ -18,10 +18,10 @@ export default class Nav extends Component {
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                            <Link to="/users"><a className="nav-link" href="/users">{user ? "Users" : null} <span className="sr-only">(current)</span></a></Link>
+                            <Link to="/users"><span className="nav-link" href="/users">{user ? "Users" : null} <span className="sr-only">(current)</span></span></Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/"><a className="nav-link" href="/">{user ? "Chat" : null}</a></Link>
+                            <Link to="/"><span className="nav-link" href="/">{user ? "Chat" : null}</span></Link>
                         </li>
                     </ul>
                     <a target="_foo" href="https://github.com/DiogenisPanagiotis"><button className="btn btn-danger" type="submit">Github</button></a>

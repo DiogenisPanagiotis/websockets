@@ -20,7 +20,8 @@ export default class Messages extends Component {
 		return (
 				<div className="jumbotron jumbotron-chat-white chat-space" ref='container'>
 					{
-						messages.map(mes => {
+						messages ?
+						(messages.map(mes => {
 							return (
 								<div
 									key={ mes.id }
@@ -33,7 +34,9 @@ export default class Messages extends Component {
 									</div>
 								</div>
 							)
-						})
+						}))
+						:
+						null
 					}
 				</div>
 		);

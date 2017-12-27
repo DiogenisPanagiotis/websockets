@@ -22,7 +22,25 @@ export default class ChatContainer extends Component {
 		this.setState({communityChat: chat})
 		socket.on(MESSAGE_RECIEVED, this.addMessageToChat)		
 		socket.on("RECEIVED", this.addUserToUsers)	
+		socket.on("REMOVEUSER", this.removeUserFromUsers)	
 		this.sendUser(user)
+	}
+
+	removeUserFromUsers = user => {
+		const { communityChat } = this.state
+		let updatedChat = communityChat
+		console.log('wooo1', updatedChat)
+		let newUserList = []
+		for (let i = 0; i < updatedChat.users.length; i++) {
+			let userObj = updatedChat.users[i]
+			if (userObj.name !== user.name) {
+				newUserList.push(userObj)
+			}
+		}
+		updatedChat.users = newUserList
+		console.log('wooo2', updatedChat)
+		this.setState({communityChat: updatedChat})
+		this.props.setUserNull(user)
 	}
 
 	addUserToUsers = user => {
@@ -74,8 +92,6 @@ export default class ChatContainer extends Component {
 			}
 		}
 	}
-
-
 
 	render() {
 		const { communityChat } = this.state
