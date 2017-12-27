@@ -20,7 +20,7 @@ export default class Messages extends Component {
 			let embededId = mes.message.split('embed/')[1]
 			return (
 				<div className="data">
-					<iframe className="embed" width="200" height="112" src={`https://www.youtube.com/embed/${embededId}?autoplay=1&player=html5&rel=0&wmode=transparent`} frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+					<iframe className="embed" width="200" height="112" src={`https://www.youtube.com/embed/${embededId}?player=html5&rel=0&wmode=transparent`} frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 					<div className="message">
 						<a href={mes.message} target="_foo">{ mes.message }</a>
 					</div>
