@@ -28,7 +28,7 @@ export default class MessageInput extends Component {
 					id = "message"
 					ref = {"messageinput"}
 					type = "text"
-					className = "form-control form-control-no-border"
+					className = "form-control form-control-no-border form-control-message-input"
 					value = { message }
 					autoComplete = {'off'}
 			      	placeholder="Say something..." 
